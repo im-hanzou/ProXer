@@ -1,5 +1,5 @@
 # ProXer
-(Static) Proxy Quality Checker - Tools for checking your proxies quality
+Static Proxy Quality Checker is a tool designed to evaluate the quality and validity of proxies by detecting their type (HTTP, HTTPS, SOCKS4, SOCKS5), checking their functionality, and retrieving additional details like country, anonymity status, and VPN association using external APIs. Valid proxies are categorized and saved into organized files for easy access, and the tool uses multi-threading to efficiently process large proxy lists.
 # Buy Proxies
 - Free Proxies Static Residental: 
 1. [WebShare](https://www.webshare.io/?referral_code=p7k7whpdu2jg)
