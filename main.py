@@ -57,6 +57,7 @@ class ProxyChecker:
             
             proxy_details_response = requests.get(
                 f'https://proxycheck.io/v2/{ip_address}?vpn=1&asn=1',
+                proxies=proxies,
                 timeout=10,
                 verify=False
             )
@@ -66,6 +67,9 @@ class ProxyChecker:
                 ip_info = proxy_details.get(ip_address, {})
                 return {
                     'ip': ip_address,
+                    'asn': ip_info.get('asn', 'Unknown'),
+                    'provider': ip_info.get('provider', 'Unknown'),
+                    'organisation': ip_info.get('org', 'Unknown'),
                     'country': ip_info.get('country', 'Unknown'),
                     'proxy_status': ip_info.get('proxy', 'no'),
                     'type': ip_info.get('type', 'Unknown'),
@@ -93,10 +97,10 @@ class ProxyChecker:
 
     def write_proxy_result(self, result):
         if result['proxy_status'].lower() == 'yes':
-            filename = f"{result['country']}-Proxy({result['type']}).txt"
+            filename = f"bad-proxies.txt"
             color = Fore.RED
         else:
-            filename = f"{result['country']}-NotProxy-{result['proxy_type']}.txt"
+            filename = f"good-proxies.txt"
             color = Fore.GREEN
 
         filepath = os.path.join(self.proxy_results_dir, filename)
@@ -104,7 +108,7 @@ class ProxyChecker:
         with open(filepath, 'a') as f:
             f.write(f"{result['proxy_url']}\n")
         
-        print(f"\n{color}✔ {result['proxy_url']} -> {filename}{Style.RESET_ALL}")
+        print(f"\n{color}✔ {result['proxy_url']} | {result['ip']} | {result['country']} | {result['provider']}{Style.RESET_ALL}")
 
     def process_proxy_list(self, input_file):
         try:
