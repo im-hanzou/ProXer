@@ -34,5 +34,14 @@ python main.py
 python3 main.py
 ```
 - Insert your proxies filename
+>Supported Format
+```bash
+http://host:port
+http://user:pass@host:port
+socks4://host:port
+socks4://user:pass@host:port
+socks5://host:port
+socks5://user:pass@host:port
+```
 - Proxies result will saved to folder named ``proxy_results``
 ### Run this bot at your own risk, I'm not responsible for any loss or damage caused by this bot. This bot is for educational purposes only.
