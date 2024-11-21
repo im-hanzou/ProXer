@@ -44,4 +44,6 @@ socks5://host:port
 socks5://user:pass@host:port
 ```
 - Proxies result will saved to folder named ``proxy_results``
+- Good Proxies will saved to ``good-proxies.txt``
+- Bad Proxies will saved to ``bad-proxies.txt``
 ### Run this bot at your own risk, I'm not responsible for any loss or damage caused by this bot. This bot is for educational purposes only.
