@@ -33,6 +33,7 @@ python main.py
 ```bash
 python3 main.py
 ```
+>You can try main-v2.py for better performance
 - Insert your proxies filename
 >Supported Format
 ```bash
