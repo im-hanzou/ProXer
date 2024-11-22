@@ -1,2 +1,5 @@
 requests
 colorama
+urllib3
+python-socks
+PySocks
